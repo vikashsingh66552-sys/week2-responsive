@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Responsive landing page for Greenly, a plant and lifestyle store.">
+  <title>Greenly | Bring Nature Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#home"><span class="brand-icon">✿</span> greenly</a>
+      <button class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li><li><a href="#plants">Plants</a></li>
+        <li><a href="#about">Our story</a></li><li><a class="nav-button" href="#contact">Get in touch ↗</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero container" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">A LITTLE MORE GREEN, EVERY DAY</p>
+        <h1>Make room<br>for <span>nature.</span></h1>
+        <p class="intro">Thoughtfully chosen plants and simple ideas to make your space feel calmer, fresher, and more like you.</p>
+        <div class="actions"><a class="button" href="#plants">Explore plants <span>↗</span></a><a class="plain-link" href="#about">Why Greenly?</a></div>
+        <div class="trust"><span class="trust-icon">✓</span><span>Easy-care favourites<br><strong>For every kind of home</strong></span></div>
+      </div>
+      <div class="hero-visual" aria-label="Decorative plant illustration" role="img">
+        <div class="sun"></div><div class="plant-pot"><div class="stem stem-a"></div><div class="stem stem-b"></div><div class="stem stem-c"></div><div class="leaf leaf-a"></div><div class="leaf leaf-b"></div><div class="leaf leaf-c"></div><div class="leaf leaf-d"></div><div class="leaf leaf-e"></div><div class="pot"></div></div>
+        <span class="visual-note">GROW AT YOUR OWN PACE</span>
+      </div>
+    </section>
+    <section class="benefits" id="about"><div class="container benefits-grid">
+      <article><span>01</span><h2>Easy to love</h2><p>Friendly plant picks and clear care tips for beginners.</p></article>
+      <article><span>02</span><h2>Made for your space</h2><p>Small shelves, sunny corners, and everything in between.</p></article>
+      <article><span>03</span><h2>Grow a little daily</h2><p>Simple habits that bring more life into your routine.</p></article>
+    </div></section>
+    <section class="plants-section container" id="plants">
+      <div class="section-title"><div><p class="eyebrow">FIND YOUR FAVOURITE</p><h2>A good place<br>to <span>grow.</span></h2></div><p>Start with one plant. Give it a little light and care, and let the rest follow.</p></div>
+      <div class="plant-grid">
+        <article class="plant-card"><div class="plant-art art-one"><span>✦</span></div><div class="card-copy"><div><h3>The Sunny One</h3><p>Bright light · Easy care</p></div><span class="card-arrow">↗</span></div></article>
+        <article class="plant-card"><div class="plant-art art-two"><span>❋</span></div><div class="card-copy"><div><h3>The Quiet Corner</h3><p>Indirect light · Low fuss</p></div><span class="card-arrow">↗</span></div></article>
+        <article class="plant-card"><div class="plant-art art-three"><span>✿</span></div><div class="card-copy"><div><h3>The Little Jungle</h3><p>Filtered light · Lush leaves</p></div><span class="card-arrow">↗</span></div></article>
+      </div>
+    </section>
+    <section class="contact" id="contact"><div class="container contact-inner"><div><p class="eyebrow">YOUR NEXT LITTLE ADVENTURE</p><h2>Let's help your<br>space <span>come alive.</span></h2></div><a class="button button-light" href="mailto:hello@greenly.example">Say hello ↗</a></div></section>
+  </main>
+  <footer><div class="container footer-inner"><a class="brand" href="#home"><span class="brand-icon">✿</span> greenly</a><p>Small steps. More green.</p><p>© 2026 Greenly</p></div></footer>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const opened = navLinks.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(opened));
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }));
+  </script>
+</body>
+</html>
